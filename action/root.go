@@ -7,7 +7,7 @@ import (
 )
 
 // version of this application
-const version = "v0.0.1"
+const version = "v0.1.0"
 
 // Root action function
 func Root(ctx *cli.Context) error {
