@@ -34,7 +34,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: "386"
         GOOS: linux
-        EXTRA_FILES: "README.md LICENSE"
+        EXTRA_FILES: "build.sh README.md LICENSE"
   release-linux-amd64:
     name: release linux/amd64
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: amd64
         GOOS: linux
-        EXTRA_FILES: "README.md LICENSE"
+        EXTRA_FILES: "build.sh README.md LICENSE"
   release-linux-arm:
     name: release linux/386
     runs-on: ubuntu-latest
@@ -58,7 +58,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: "arm"
         GOOS: linux
-        EXTRA_FILES: "README.md LICENSE"
+        EXTRA_FILES: "build.sh README.md LICENSE"
   release-linux-arm64:
     name: release linux/amd64
     runs-on: ubuntu-latest
@@ -70,7 +70,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: arm64
         GOOS: linux
-        EXTRA_FILES: "README.md LICENSE"
+        EXTRA_FILES: "build.sh README.md LICENSE"
   release-darwin-amd64:
     name: release darwin/amd64
     runs-on: ubuntu-latest
@@ -82,7 +82,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: amd64
         GOOS: darwin
-        EXTRA_FILES: "README.md LICENSE"
+        EXTRA_FILES: "build.sh README.md LICENSE"
   release-windows-386:
     name: release windows/386
     runs-on: ubuntu-latest
@@ -94,7 +94,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: "386"
         GOOS: windows
-        EXTRA_FILES: "README.md LICENSE"
+        EXTRA_FILES: "build.sh README.md LICENSE"
   release-windows-amd64:
     name: release windows/amd64
     runs-on: ubuntu-latest
@@ -106,4 +106,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOARCH: amd64
         GOOS: windows
-        EXTRA_FILES: "README.md LICENSE"
+        EXTRA_FILES: "build.sh README.md LICENSE"
