@@ -5,105 +5,58 @@ on:
     types: [published]
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        go-version: [ 1.15 ]
-        os: [ ubuntu-latest ]
-    runs-on: ${{ matrix.os }}
-    steps:
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.15
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Clear cache
-      run: go clean -testcache
-    - name: Run test
-      run: go test ./test -v --failfast
-      
   release-linux-386:
     name: release linux/386
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: compile and release
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOARCH: "386"
-        GOOS: linux
-        EXTRA_FILES: "build.sh README.md LICENSE"
+    - name: Compile and upload release
+      uses: StevenCyb/sc-go-cross-build@0.1.0
+      with: 
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        platform: "linux/386"
+        include-files: "README.md"
   release-linux-amd64:
     name: release linux/amd64
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: compile and release
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOARCH: amd64
-        GOOS: linux
-        EXTRA_FILES: "build.sh README.md LICENSE"
+    - name: Compile and upload release
+      uses: StevenCyb/sc-go-cross-build@0.1.0
+      with: 
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        platform: "linux/amd64"
+        include-files: "README.md"
   release-linux-arm:
-    name: release linux/386
+    name: release linux/arm
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: compile and release
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOARCH: "arm"
-        GOOS: linux
-        EXTRA_FILES: "build.sh README.md LICENSE"
-  release-linux-arm64:
-    name: release linux/amd64
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: compile and release
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOARCH: arm64
-        GOOS: linux
-        EXTRA_FILES: "build.sh README.md LICENSE"
-  release-darwin-amd64:
-    name: release darwin/amd64
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: compile and release
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOARCH: amd64
-        GOOS: darwin
-        EXTRA_FILES: "build.sh README.md LICENSE"
+    - name: Compile and upload release
+      uses: StevenCyb/sc-go-cross-build@0.1.0
+      with: 
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        platform: "linux/arm"
+        include-files: "README.md"
   release-windows-386:
     name: release windows/386
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: compile and release
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOARCH: "386"
-        GOOS: windows
-        EXTRA_FILES: "build.sh README.md LICENSE"
+    - name: Compile and upload release
+      uses: StevenCyb/sc-go-cross-build@0.1.0
+      with: 
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        platform: "windows/386"
+        include-files: "README.md"
   release-windows-amd64:
     name: release windows/amd64
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: compile and release
-      uses: ngs/go-release.action@v1.0.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOARCH: amd64
-        GOOS: windows
-        EXTRA_FILES: "build.sh README.md LICENSE"
+    - name: Compile and upload release
+      uses: StevenCyb/sc-go-cross-build@0.1.0
+      with: 
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        platform: "windows/amd64"
+        include-files: "README.md"
