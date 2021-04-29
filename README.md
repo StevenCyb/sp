@@ -189,13 +189,13 @@ sp equal --help
 
 ##### Example
 ```bash
-equal --standard-streams-input '{"year": 2021}' --standard-streams-input '{"year": 2021}'
+sp equal --standard-streams-input '{"year": 2021}' --standard-streams-input '{"year": 2021}'
 
 ## Output
 # true
 
 
-equal --standard-streams-input '{"year": 2020}' --standard-streams-input '{"year": 2021}'
+sp equal --standard-streams-input '{"year": 2020}' --standard-streams-input '{"year": 2021}'
 
 ## Output
 # false
