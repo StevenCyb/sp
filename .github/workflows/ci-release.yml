@@ -29,7 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Compile and upload release
-      uses: StevenCyb/sc-go-cross-build@0.1.0
+      uses: StevenCyb/sc-go-cross-build@0.1.1
       with: 
         github-token: ${{ secrets.GITHUB_TOKEN }}
         platform: "linux/386"
@@ -40,7 +40,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Compile and upload release
-      uses: StevenCyb/sc-go-cross-build@0.1.0
+      uses: StevenCyb/sc-go-cross-build@0.1.1
       with: 
         github-token: ${{ secrets.GITHUB_TOKEN }}
         platform: "linux/amd64"
@@ -51,7 +51,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Compile and upload release
-      uses: StevenCyb/sc-go-cross-build@0.1.0
+      uses: StevenCyb/sc-go-cross-build@0.1.1
       with: 
         github-token: ${{ secrets.GITHUB_TOKEN }}
         platform: "linux/arm"
@@ -62,7 +62,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Compile and upload release
-      uses: StevenCyb/sc-go-cross-build@0.1.0
+      uses: StevenCyb/sc-go-cross-build@0.1.1
       with: 
         github-token: ${{ secrets.GITHUB_TOKEN }}
         platform: "windows/386"
@@ -73,7 +73,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Compile and upload release
-      uses: StevenCyb/sc-go-cross-build@0.1.0
+      uses: StevenCyb/sc-go-cross-build@0.1.1
       with: 
         github-token: ${{ secrets.GITHUB_TOKEN }}
         platform: "windows/amd64"
